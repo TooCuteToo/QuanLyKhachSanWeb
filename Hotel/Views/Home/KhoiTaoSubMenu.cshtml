@@ -1,0 +1,9 @@
+﻿@using Hotel.Models
+@model List<LoaiPhong>
+
+<ul class="lv2-menu">
+    @foreach (LoaiPhong lp in Model)
+    {
+        <li><a href="/Home/Room?maLoai=@lp.maLoai">@lp.tenLP</a></li>
+    }
+</ul>

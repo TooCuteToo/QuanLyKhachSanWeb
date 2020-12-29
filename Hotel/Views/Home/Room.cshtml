@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Room";
+    Layout = "~/Views/Shared/LayoutHotel.cshtml";
+}
+@using Hotel.Models
+@model string
+
+<div class="container-fluid w-75 m-auto">
+    <h2 class="hero-title underline mt-3">@ViewBag.tenLP</h2>
+
+   @Html.Action("KhoiTaoDanhSachPhong", "Home", new { maLoai = Model, tenPhong = ViewBag.tenPhong })
+</div>
+

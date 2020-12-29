@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Views/Shared/LayoutHotel.cshtml";
+}
+@using Hotel.Models
+@model Cart
+
+<div class="container-fluid m-auto" style="width: 85%;">
+    <h2 class="hero-title underline">giỏ hàng</h2>
+
+    <div class="cart-products-container">
+        
+        <div class="cart-product-item-list">
+            @if (Model == null)
+            {
+                <h2 class="hero-title underline">Bạn chưa đặt phòng nào</h2>
+            }
+            else
+            {
+                foreach (Room phong in Model.items)
+                {
+                <form action="/DatHang/EditMatHang?tenPhong=@phong.tenPhong" method="post" class="cart-product-item">
+                    <button type="submit" class="edit-icon-container">
+                        <i class="fas fa-edit"></i>
+                    </button>
+
+                    <a href="/DatHang/XoaMatHang?tenPhong=@phong.tenPhong" class="close-icon-container">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+
+                    <div class="cart-product-img">
+                        <img src="~/Content/HinhAnh/@phong.hinhAnh" />
+                    </div>
+
+                    <div class="cart-product-info">
+                        @if (phong.giamGia != null)
+                        {
+                            <h4 class="cart-product-price"><span>$@string.Format("{0:#.00}", phong.giamGia)</span><small>$@string.Format("{0:#.00}", phong.giaPhong)</small></h4>
+                        }
+                        else
+                        {
+                            <h4 class="cart-product-price">$@string.Format("{0:#.00}", phong.giaPhong)</h4>
+                                
+                        }
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                  ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+                  amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+
+                        </p>
+
+                        <div class="input-date">
+                            <input name="ngayDat" type="date" value="@phong.ngayDat.ToString("yyyy-MM-dd")" min="2021-01-02" max="2029-01-02" />
+                            <input name="ngayTra" type="date" value="@phong.ngayTra.ToString("yyyy-MM-dd")" min="2021-01-04" max="2029-01-04" />
+                        </div>
+                    </div>
+                </form>
+                }
+            }
+
+        </div>
+
+        <div class="cart-total">
+            <h4>tổng cộng</h4>
+
+            <div class="cart-total-text">
+                <div>
+                    <p class="">giá tiền</p>
+                    @if (Model == null)
+                    {
+                        <p>$0.00</p>
+                    }
+                    else
+                    {
+                        <p>$@string.Format("{0:#.00}", @Model.sumMoney())</p>
+                    }
+                </div>
+
+                <div>
+                    <p>giảm giá</p>
+                    @if (Model == null)
+                    {
+                        <p>$0.00</p>
+                    }
+                    else
+                    {
+                        <p>$@string.Format("{0:#.00}", Model.sumDiscountMoney())</p>
+                    }
+                </div>
+
+                <div>
+                    <p>số lượng</p>
+                    @if (Model == null)
+                    {
+                        <p>0</p>
+                    }
+                    else
+                    {
+                        <p>@Model.count()</p>
+                    }
+
+                </div>
+            </div>
+
+            <a href="/DatHang/ThanhToanDonHang?thanhToan=true" class="cart-buy-btn">thanh toán</a>
+        </div>
+
+    </div>
+</div>

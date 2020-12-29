@@ -1,0 +1,24 @@
+﻿@using Hotel.Models
+@model KhachHang
+
+<div class="login-container container border-b d-flex justify-content-end py-2 px-0">
+    @if (Model == null)
+    {
+        <div>
+            <a href="/Customer/Login/0" class="text-link">Login</a>
+            <span class="px-3">|</span>
+            <a href="/Customer/Login/1" class="text-link">Register</a>
+        </div>
+    }
+    else
+    {
+        <div class="user-info-container">
+            <a href="/DatHang/ThanhToanDonHang?thanhToan=false">
+                <i class="fa fa-user"></i>
+            </a>
+            <span>@Model.tenKH</span>
+            <a href="/Customer/Logout"><i class="fa fa-sign-out"></i></a>
+        </div>
+    }
+
+</div>

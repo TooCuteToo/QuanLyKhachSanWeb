@@ -1,0 +1,239 @@
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\Hotel.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\Hotel.pdb
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\Antlr3.Runtime.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\EntityFramework.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\Microsoft.Web.Infrastructure.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\Newtonsoft.Json.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Net.Http.Formatting.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.Http.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.Http.WebHost.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.Mvc.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.Optimization.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.Providers.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.Razor.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.WebPages.Deployment.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.WebPages.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.WebPages.Razor.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\WebGrease.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\EntityFramework.xml
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\Newtonsoft.Json.xml
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Net.Http.Formatting.xml
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.Http.xml
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.Http.WebHost.xml
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.Mvc.xml
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.Razor.xml
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.WebPages.xml
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.WebPages.Deployment.xml
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\bin\System.Web.WebPages.Razor.xml
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\obj\Debug\Hotel.csprojResolveAssemblyReference.cache
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\obj\Debug\Hotel.dll
+D:\Hoc Tap\Cong Nghe Web\Do An\Hotel\Hotel\obj\Debug\Hotel.pdb
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\Hotel.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\Hotel.pdb
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\Antlr3.Runtime.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\EntityFramework.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\Microsoft.Web.Infrastructure.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\Newtonsoft.Json.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Net.Http.Formatting.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.Http.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.Http.WebHost.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.Mvc.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.Optimization.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.Providers.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.Razor.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.WebPages.Deployment.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.WebPages.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.WebPages.Razor.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\WebGrease.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\EntityFramework.xml
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\Newtonsoft.Json.xml
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Net.Http.Formatting.xml
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.Http.xml
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.Http.WebHost.xml
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.Mvc.xml
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.Razor.xml
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.WebPages.xml
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.WebPages.Deployment.xml
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\bin\System.Web.WebPages.Razor.xml
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\obj\Debug\Hotel.csprojResolveAssemblyReference.cache
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\obj\Debug\Hotel.dll
+D:\Hoc tap\CN Web\DoAn\Do An\Hotel\Hotel\obj\Debug\Hotel.pdb
+E:\Study\CNWeb\Hotel\Hotel\bin\Hotel.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\Hotel.pdb
+E:\Study\CNWeb\Hotel\Hotel\bin\Antlr3.Runtime.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\EntityFramework.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\Microsoft.Web.Infrastructure.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\Newtonsoft.Json.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Net.Http.Formatting.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.Http.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.Http.WebHost.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.Mvc.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.Optimization.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.Providers.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.Razor.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.WebPages.Deployment.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.WebPages.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.WebPages.Razor.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\WebGrease.dll
+E:\Study\CNWeb\Hotel\Hotel\bin\EntityFramework.xml
+E:\Study\CNWeb\Hotel\Hotel\bin\Newtonsoft.Json.xml
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Net.Http.Formatting.xml
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.Http.xml
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.Http.WebHost.xml
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.Mvc.xml
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.Razor.xml
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.WebPages.xml
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.WebPages.Deployment.xml
+E:\Study\CNWeb\Hotel\Hotel\bin\System.Web.WebPages.Razor.xml
+E:\Study\CNWeb\Hotel\Hotel\obj\Debug\Hotel.csprojResolveAssemblyReference.cache
+E:\Study\CNWeb\Hotel\Hotel\obj\Debug\Hotel.dll
+E:\Study\CNWeb\Hotel\Hotel\obj\Debug\Hotel.pdb
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\Hotel.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\Hotel.pdb
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\Antlr3.Runtime.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\EntityFramework.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\Newtonsoft.Json.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Net.Http.Formatting.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Http.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Http.WebHost.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Mvc.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Optimization.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Providers.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Razor.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Deployment.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Razor.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\WebGrease.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\EntityFramework.xml
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\Newtonsoft.Json.xml
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Net.Http.Formatting.xml
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Http.xml
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Http.WebHost.xml
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Mvc.xml
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Razor.xml
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.xml
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Deployment.xml
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Razor.xml
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\obj\Debug\Hotel.dll
+C:\Users\An B52\Desktop\QuanLyKhachSanWeb\Hotel\obj\Debug\Hotel.pdb
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\Hotel.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\Hotel.pdb
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\Antlr3.Runtime.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\EntityFramework.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Http.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Http.WebHost.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Optimization.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Providers.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Razor.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Razor.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\WebGrease.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\EntityFramework.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Http.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.Razor.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Razor.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\obj\Debug\Hotel.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\obj\Debug\Hotel.pdb
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb\Hotel\obj\Debug\Hotel.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\Hotel.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\Hotel.pdb
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\Antlr3.Runtime.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\EntityFramework.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.Http.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.Http.WebHost.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.Optimization.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.Providers.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.Razor.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.WebPages.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.WebPages.Razor.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\WebGrease.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\EntityFramework.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.Http.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.Razor.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.WebPages.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\bin\System.Web.WebPages.Razor.xml
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\obj\Debug\Hotel.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\obj\Debug\Hotel.dll
+C:\Users\Administrator\Desktop\QuanLyKhachSanWeb - Copy\Hotel\obj\Debug\Hotel.pdb
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\Hotel.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\Hotel.pdb
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\Antlr3.Runtime.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\EntityFramework.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\Microsoft.Web.Infrastructure.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\Newtonsoft.Json.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Net.Http.Formatting.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.Http.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.Http.WebHost.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.Mvc.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.Optimization.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.Providers.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.Razor.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Deployment.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Razor.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\WebGrease.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\EntityFramework.xml
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\Newtonsoft.Json.xml
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Net.Http.Formatting.xml
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.Http.xml
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.Http.WebHost.xml
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.Mvc.xml
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.Razor.xml
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.xml
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Deployment.xml
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Razor.xml
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\obj\Debug\Hotel.csprojResolveAssemblyReference.cache
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\obj\Debug\Hotel.dll
+D:\Hoc tap\CN Web\DoAn\Github\QuanLyKhachSanWeb\Hotel\obj\Debug\Hotel.pdb
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\Hotel.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\Hotel.pdb
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\Antlr3.Runtime.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\EntityFramework.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\Newtonsoft.Json.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.Http.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.Http.WebHost.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.Optimization.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.Providers.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.Razor.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.WebPages.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.WebPages.Razor.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\WebGrease.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\EntityFramework.xml
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.Http.xml
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.Razor.xml
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.WebPages.xml
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\bin\System.Web.WebPages.Razor.xml
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\obj\Debug\Hotel.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\obj\Debug\Hotel.dll
+C:\Users\Administrator\Downloads\QuanLyKhachSanWeb-main\Hotel\obj\Debug\Hotel.pdb
