@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyKhachSan_NguyenChanhBao_HuynhTangAnhTu", "Hotel\QuanLyKhachSan_NguyenChanhBao_HuynhTangAnhTu.csproj", "{4F7EEA40-1DE8-47FE-92E3-FB9299304C12}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyKhachSan_NguyenChanhBao_HuynhTangAnhTu_VuHoangQuan", "Hotel\QuanLyKhachSan_NguyenChanhBao_HuynhTangAnhTu_VuHoangQuan.csproj", "{4F7EEA40-1DE8-47FE-92E3-FB9299304C12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

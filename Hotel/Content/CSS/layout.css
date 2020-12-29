@@ -173,8 +173,9 @@ body {
 
 .product-container {
   display: grid;
-  grid-template-columns: repeat(3, 310px);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem 1rem;
+  margin: auto;
 }
 
 /*====== ROOM CARD ======*/
