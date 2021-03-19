@@ -45,7 +45,7 @@ namespace Hotel.Models
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QuanLyKhachSanConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QuanLyKhachSanConnectionString3"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

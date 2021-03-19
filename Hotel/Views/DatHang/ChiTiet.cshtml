@@ -35,12 +35,11 @@
                     <div class="cart-product-info">
                         @if (phong.giamGia != null)
                         {
-                            <h4 class="cart-product-price"><span>$@string.Format("{0:#.00}", phong.giamGia)</span><small>$@string.Format("{0:#.00}", phong.giaPhong)</small></h4>
+                            <h4 class="cart-product-price">@phong.tenPhong.ToUpper()<span style="margin-left: 1rem;">$@string.Format("{0:#.00}", phong.giamGia)</span><small>$@string.Format("{0:#.00}", phong.giaPhong)</small></h4>
                         }
                         else
                         {
-                            <h4 class="cart-product-price">$@string.Format("{0:#.00}", phong.giaPhong)</h4>
-                                
+                            <h4 class="cart-product-price">@phong.tenPhong.ToUpper()<span style="margin-left: 1rem;">$@string.Format("{0:#.00}", phong.giaPhong)</span></h4>
                         }
 
                         <p>

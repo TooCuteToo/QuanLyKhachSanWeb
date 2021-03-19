@@ -87,6 +87,7 @@ INSERT INTO Phong values
 ('Pok Room',N'Trống','LP01', 'hinh_18.jpg', 38.99, 4.8)
 go
 
+set dateformat dmy
 INSERT INTO HoaDon values
 ('HD01','anh@gmail.com', 'Nock Room','10/10/2020','13/10/2020', null)
 

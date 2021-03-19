@@ -21,6 +21,8 @@ namespace Hotel.Models
         public DateTime ngayDat { get; set; }
         public DateTime ngayTra { get; set; }
 
+        public bool inStock { get; set; }
+
         public Room() { }
 
         public Room(string tenPhong)

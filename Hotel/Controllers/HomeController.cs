@@ -47,6 +47,21 @@ namespace Hotel.Controllers
 
                 List<Room> listPhong = tList.OrderBy(item => new Random().Next()).ToList();
 
+                Cart cart = (Cart) Session["cart"];
+
+                if (cart != null)
+                {
+                    foreach (Room phong in listPhong)
+                    {
+                        Room kq = cart.items.FirstOrDefault(item => item.tenPhong.Contains(phong.tenPhong));
+
+                        if (kq != null)
+                        {
+                            phong.inStock = true;
+                        }
+                    }
+                }
+
                 if (maLoai != null)
                 {
                     if (maLoai.Contains("LP"))
@@ -119,9 +134,16 @@ namespace Hotel.Controllers
         {
             using (DataClasses1DataContext db = new DataClasses1DataContext())
             {
-                List<LoaiPhong> listLP = db.LoaiPhongs.ToList();
+                try
+                {
+                    List<LoaiPhong> listLP = db.LoaiPhongs.ToList();
 
-                return PartialView(listLP);
+                    return PartialView(listLP);
+                }
+                catch
+                {
+                    return PartialView();
+                }
             }
         }
     }

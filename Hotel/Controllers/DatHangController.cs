@@ -57,9 +57,10 @@ namespace Hotel.Controllers
 
             Room phong  = new Room(tenPhong);
 
-            phong.ngayDat = Convert.ToDateTime(fc["ngayDat"]);
-            phong.ngayTra = DateTime.Parse(fc["ngayTra"]);
+            phong.ngayDat = fc["ngayDat"] != null ? DateTime.Parse(fc["ngayDat"]) : DateTime.Now;
+            phong.ngayTra = fc["ngayTra"] != null ? DateTime.Parse(fc["ngayTra"]) : DateTime.Now;
 
+            phong.inStock = true;
             cart.add(phong);
 
             Session["cart"] = cart;
@@ -72,6 +73,8 @@ namespace Hotel.Controllers
             Cart cart = Session["cart"] as Cart;
 
             Room phong = new Room(tenPhong);
+            phong.inStock = false;
+            
             cart.delete(phong);
 
             Session["cart"] = cart;
@@ -85,8 +88,8 @@ namespace Hotel.Controllers
             Cart cart = Session["cart"] as Cart;
             Room phong = cart.items.FirstOrDefault(item => item.tenPhong == tenPhong);
 
-            phong.ngayDat = DateTime.Parse(fc["ngayDat"]);
-            phong.ngayTra = DateTime.Parse(fc["ngayTra"]);
+            phong.ngayDat = fc["ngayDat"] != null ? DateTime.Parse(fc["ngayDat"]) : DateTime.Now;
+            phong.ngayTra = fc["ngayTra"] != null ? DateTime.Parse(fc["ngayTra"]) : DateTime.Now;
 
             Session["cart"] = cart;
 

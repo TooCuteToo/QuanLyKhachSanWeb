@@ -36,12 +36,14 @@ namespace Hotel.Controllers
 
                 Cart cart = Session["cart"] as Cart;
 
-                ViewBag.inStock = false;
-
                 if (cart != null)
                 {
-                    Room room = cart.items.FirstOrDefault(item => item.tenPhong== id);
-                    ViewBag.inStock = room == null ? false : true;
+                    Room room = cart.items.FirstOrDefault(item => item.tenPhong == id);
+
+                    if (room != null)
+                    {
+                        phong.inStock = true;
+                    }
                 }
 
                 return View("Index", phong);

@@ -18,10 +18,15 @@
             </div>
             <div class="product-details">
                 <span class="product-catagory">@phong.tenLP</span>
-                <h4><a href="/Detail/Index/@phong.tenPhong">@phong.tenPhong</a></h4>
+                <div class="product-sub-details">
+                    <h4><a href="/Detail/Index/@phong.tenPhong">@phong.tenPhong</a></h4>
+                    @if (phong.inStock) {
+                        <span class="product-instock">trong giỏ</span>   
+                    }
+                </div>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Vero, possimus nostrum!
+                    Vero, possimus nostrum!
                 </p>
                 <div class="product-bottom-details">
                     @if (phong.giamGia != null)
@@ -33,10 +38,10 @@
                         <div class="product-price">$@string.Format("{0:#.00}", @phong.giaPhong)</div>     
                     }
 
-                    <div class="product-links">
-                        <a href=""><i class="fa fa-heart"></i></a>
-                        <a href=""><i class="fa fa-shopping-cart"></i></a>
-                    </div>
+                    <form action="/DatHang/ThemMatHang?tenPhong=@phong.tenPhong" method="post" class="product-links">
+                        <button><i class="fa fa-heart"></i></button>
+                        <button class="btn-test" type="submit"><i class="fa fa-shopping-cart"></i></button>
+                    </form>
                 </div>
             </div>
         </div>

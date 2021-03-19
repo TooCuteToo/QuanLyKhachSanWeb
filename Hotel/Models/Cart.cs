@@ -52,7 +52,6 @@ namespace Hotel.Models
                 return 0;
             }
 
-
             return items.Sum(item =>
             {
                 decimal? sum = 0;
