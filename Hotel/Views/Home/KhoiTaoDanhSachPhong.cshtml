@@ -20,9 +20,14 @@
                 <span class="product-catagory">@phong.tenLP</span>
                 <div class="product-sub-details">
                     <h4><a href="/Detail/Index/@phong.tenPhong">@phong.tenPhong</a></h4>
+                    @if (phong.tinhTrang == "Đặt") {
+                        <span class="product-instock">Hết phòng</span>    
+                    }
+
                     @if (phong.inStock) {
                         <span class="product-instock">trong giỏ</span>   
                     }
+
                 </div>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -31,17 +36,22 @@
                 <div class="product-bottom-details">
                     @if (phong.giamGia != null)
                     {
-                        <div class="product-price"><small>$@string.Format("{0:#.00}", @phong.giaPhong)</small>$@string.Format("{0:#.00}", @phong.giamGia)</div>   
+                        <div class="product-price"><small>$@string.Format("{0:#.00}", @phong.giaPhong)</small>$@string.Format("{0:#.00}",phong.giaPhong - @phong.giamGia)</div>   
                     }
                     else
                     {   
                         <div class="product-price">$@string.Format("{0:#.00}", @phong.giaPhong)</div>     
                     }
 
-                    <form action="/DatHang/ThemMatHang?tenPhong=@phong.tenPhong" method="post" class="product-links">
-                        <button><i class="fa fa-heart"></i></button>
-                        <button class="btn-test" type="submit"><i class="fa fa-shopping-cart"></i></button>
-                    </form>
+                    <div class="product-links">
+                        <form action="/DatHang/ThemMatHang?tenPhong=@phong.tenPhong" method="post">
+                            <button class="btn-test" type="submit"><i class="fa fa-shopping-cart"></i></button>
+                        </form>
+
+                        <form action="/Customer/ThemPhongYeuThich?tenPhong=@phong.tenPhong" method="post">
+                            <button><i class="fa fa-heart"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

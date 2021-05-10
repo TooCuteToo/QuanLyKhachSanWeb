@@ -25,6 +25,9 @@ D:\Study\CONG NGHE PHAN MEM\QuanLyKhachSanWeb\Hotel\bin\System.Web.Razor.xml
 D:\Study\CONG NGHE PHAN MEM\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.xml
 D:\Study\CONG NGHE PHAN MEM\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Deployment.xml
 D:\Study\CONG NGHE PHAN MEM\QuanLyKhachSanWeb\Hotel\bin\System.Web.WebPages.Razor.xml
-D:\Study\CONG NGHE PHAN MEM\QuanLyKhachSanWeb\Hotel\obj\Debug\QuanLyKhachSan.csprojResolveAssemblyReference.cache
 D:\Study\CONG NGHE PHAN MEM\QuanLyKhachSanWeb\Hotel\obj\Debug\Hotel.dll
 D:\Study\CONG NGHE PHAN MEM\QuanLyKhachSanWeb\Hotel\obj\Debug\Hotel.pdb
+D:\Study\CONG NGHE PHAN MEM\QuanLyKhachSanWeb\Hotel\bin\Hotel.dll.config
+D:\Study\CONG NGHE PHAN MEM\QuanLyKhachSanWeb\Hotel\obj\Debug\QuanLyKhachSan.csprojAssemblyReference.cache
+D:\Study\CONG NGHE PHAN MEM\QuanLyKhachSanWeb\Hotel\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+D:\Study\CONG NGHE PHAN MEM\QuanLyKhachSanWeb\Hotel\obj\Debug\QuanLyKhachSan.csproj.CopyComplete

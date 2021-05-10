@@ -63,7 +63,7 @@ namespace Hotel.Models
                 }
                 else
                 {
-                    sum += totalDays * item.giamGia;
+                    sum += totalDays * (item.giaPhong - item.giamGia);
                 }
 
                 return sum;
@@ -82,8 +82,7 @@ namespace Hotel.Models
 
                 if (item.giamGia != null)
                 {
-                    var totalDays = item.ngayTra.Subtract(item.ngayDat).Days;
-                    sum += (item.giaPhong - item.giamGia) * totalDays;
+                sum += item.giamGia;
                 }
 
                 return sum;

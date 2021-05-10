@@ -475,6 +475,10 @@ main {
   text-align: right;
 }
 
+    .product-links form {
+        display: inline-block;
+    }
+
 .product-links button {
   display: inline-block;
   margin-left: 5px;
@@ -490,3 +494,40 @@ main {
 .product-links button:hover {
   color: #fbb72c;
 }
+
+.hover-menu-container {
+    position: relative;
+}
+
+.hover-menu {
+    display: none;
+}
+
+    .hover-menu-container:hover .hover-menu {
+        position: absolute;
+        display: block;
+        top: auto;
+        background: rgba(47, 72, 88, 1);
+        z-index: 15;
+        list-style: none;
+        color: white;
+        padding: 0;
+        transition: 0.2s linear;
+    }
+
+
+    .hover-menu li {
+        width: 220%;
+        background: rgba(47, 72, 88, 1);
+        padding: 0.8rem 1rem;
+    }
+
+    .hover-menu a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.1s linear;
+    }
+
+        .hover-menu a:hover {
+            color: rgba(241, 196, 15, 1);
+        }

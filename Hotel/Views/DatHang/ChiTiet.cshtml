@@ -13,7 +13,7 @@
         <div class="cart-product-item-list">
             @if (Model == null)
             {
-                <h2 class="hero-title underline">Bạn chưa đặt phòng nào</h2>
+                <h2></h2>
             }
             else
             {
@@ -35,7 +35,7 @@
                     <div class="cart-product-info">
                         @if (phong.giamGia != null)
                         {
-                            <h4 class="cart-product-price">@phong.tenPhong.ToUpper()<span style="margin-left: 1rem;">$@string.Format("{0:#.00}", phong.giamGia)</span><small>$@string.Format("{0:#.00}", phong.giaPhong)</small></h4>
+                            <h4 class="cart-product-price">@phong.tenPhong.ToUpper()<span style="margin-left: 1rem;">$@string.Format("{0:#.00}", phong.giaPhong - phong.giamGia)</span><small>$@string.Format("{0:#.00}", phong.giaPhong)</small></h4>
                         }
                         else
                         {

@@ -67,5 +67,32 @@ namespace Hotel.Controllers
                 return View();
             }
         }
+
+
+        //[HttpPost]
+        //public ActionResult ThemPhongYeuThich(string tenPhong)
+        //{
+        //    using (DataClasses1DataContext db = new DataClasses1DataContext())
+        //    {
+        //        KhachHang kh = Session["kh"] as KhachHang;
+
+        //        if (kh == null)
+        //        {
+        //            return RedirectToAction("Login", "Customer", new { id = 0 });
+        //        }
+
+        //        Room phong = new Room(tenPhong);
+
+        //        db.PhongYeuThiches.InsertOnSubmit(new PhongYeuThich()
+        //        {
+        //            tenPhong = phong.tenPhong,
+        //            email = kh.email,
+        //        });
+
+        //        db.SubmitChanges();
+
+        //        return RedirectToAction("Index", "Home");
+        //    }
+        //}
     }
 }

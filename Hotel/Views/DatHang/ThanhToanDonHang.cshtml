@@ -35,6 +35,7 @@
                 <td>Tiền phòng</td>
                 <td>Ngày đặt</td>
                 <td>Ngày trả</td>
+                <td></td>
             </tr>
 
             @if (ViewBag.thanhToan == true)
@@ -46,6 +47,7 @@
                         <td>$@string.Format("{0:#.00}", @phong.giaPhong)</td>
                         <td>@phong.ngayDat.ToString("yyyy/MM/dd")</td>
                         <td>@phong.ngayTra.ToString("yyyy/MM/dd")</td>
+                        <td>@Html.ActionLink("Delete", "XoaDonHang", "DatHang", new { tenPhong = @phong.tenPhong, thanhToan = true}, null)</td>
                     </tr>
                 }
             }
@@ -58,6 +60,7 @@
                         <td>$@string.Format("{0:#.00}", @hd.tienThanhToan)</td>
                         <td>@hd.ngayDat.Value.ToString("yyyy/MM/dd")</td>
                         <td>@hd.ngayTra.Value.ToString("yyyy/MM/dd")</td>
+                        <td>@Html.ActionLink("Delete", "XoaDonHang", "DatHang", new { tenPhong = @hd.tenPhong, thanhToan = false}, null)</td>
                     </tr>
                 }
             }

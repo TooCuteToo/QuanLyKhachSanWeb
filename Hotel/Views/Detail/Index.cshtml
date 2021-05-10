@@ -18,6 +18,12 @@
                 <small>@Model.tenLP</small>
                 <div class="detail-subinfo">
                     <h1 class="underline">@Model.tenPhong</h1>
+                    @if (Model.tinhTrang == "Đặt")
+                    {
+
+                        <p class="in-stock">hết phòng</p>
+                    }
+
                     @if (Model.inStock)
                     {
                         <p class="in-stock">trong giỏ</p>

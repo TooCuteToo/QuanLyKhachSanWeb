@@ -131,8 +131,6 @@ namespace Hotel.Controllers
 
                 return View();
             }
-            
-
         }
 
         [HttpPost]
@@ -158,16 +156,44 @@ namespace Hotel.Controllers
                         tienThanhToan = phong.giamGia != null ? phong.giamGia * totalDays : phong.giaPhong * totalDays,
                     };
 
+                    db.Phongs.FirstOrDefault(item => item.tenPhong == phong.tenPhong).tinhTrang = "Đặt";
+
                     db.HoaDons.InsertOnSubmit(hd);
                     db.SubmitChanges();
 
                     ViewBag.kh = kh;
                 }
 
+                Session["cart"] = null;
+
                 return RedirectToAction("ThanhToanDonHang", "DatHang", new { thanhToan = false });
             }
         }
 
+        [HttpGet]
+        public ActionResult XoaDonHang(string tenPhong, bool thanhToan)
+        {
+            using (DataClasses1DataContext db = new DataClasses1DataContext())
+            {
+                Cart cart = Session["cart"] as Cart;
+                KhachHang kh = Session["kh"] as KhachHang;
+
+                if (thanhToan == true)
+                {
+                    Room phong = new Room(tenPhong);
+                    cart.delete(phong);
+                    return RedirectToAction("ThanhToanDonHang", "DatHang", new { thanhToan = true });
+                }
+
+                HoaDon hd = db.HoaDons.FirstOrDefault(item => item.tenPhong == tenPhong);
+                db.Phongs.FirstOrDefault(item => item.tenPhong == tenPhong).tinhTrang = "Trống";
+
+                db.HoaDons.DeleteOnSubmit(hd);
+                db.SubmitChanges();
+
+                return RedirectToAction("ThanhToanDonHang", "DatHang", new { thanhToan = false });
+            }
+        }
         
     }
 }

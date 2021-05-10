@@ -13,9 +13,13 @@
     else
     {
         <div class="user-info-container">
-            <a href="/DatHang/ThanhToanDonHang?thanhToan=false">
+            <div class="hover-menu-container">
                 <i class="fa fa-user"></i>
-            </a>
+                <ul class="hover-menu">
+                    <li><a href="#">Phòng yêu thích</a></li>
+                    <li><a href="/DatHang/ThanhToanDonHang?thanhToan=false">Lịch sử đặt phòng</a></li>
+                </ul>
+            </div>
             <span>@Model.tenKH</span>
             <a href="/Customer/Logout"><i class="fa fa-sign-out"></i></a>
         </div>

@@ -25,9 +25,10 @@ namespace Hotel.Controllers
                                            tenPhong = ph.tenPhong,
                                            hinhAnh = ph.hinhAnh,
                                            giamGia = ph.giamGia,
-                                           giaPhong = lp.giaPhong,
+                                           giaPhong = ph.giaPhong,
                                            maLoai = lp.maLoai,
                                            tenLP = lp.tenLP,
+                                           tinhTrang = ph.tinhTrang,
                                        };
 
                 Room phong = tList.ToList().FirstOrDefault(item => item.tenPhong.Contains(id));

@@ -22,6 +22,7 @@ namespace Hotel.Models
         public DateTime ngayTra { get; set; }
 
         public bool inStock { get; set; }
+        public string tinhTrang { get; set; }
 
         public Room() { }
 
@@ -38,9 +39,10 @@ namespace Hotel.Models
                                 hinhAnh = ph.hinhAnh,
                                 maLoai = ph.maLoai,
                                 giamGia = ph.giamGia,
-                                giaPhong = lp.giaPhong,
+                                giaPhong = ph.giaPhong,
                                 tenLP = lp.tenLP,
                                 tenPhong = ph.tenPhong,
+                                tinhTrang = ph.tinhTrang,
                             };
 
                 var result = tList.FirstOrDefault(item => item.tenPhong == tenPhong);
@@ -55,6 +57,7 @@ namespace Hotel.Models
                 this.tenLP = result.tenLP;
 
                 this.tenPhong = result.tenPhong;
+                this.tinhTrang = result.tinhTrang;
             }
         }
     }

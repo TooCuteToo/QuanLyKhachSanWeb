@@ -39,10 +39,11 @@ namespace Hotel.Controllers
                                danhGia = ph.danhGia,
                                tenPhong = ph.tenPhong,
                                giamGia = ph.giamGia,
-                               giaPhong = lp.giaPhong,
+                               giaPhong = ph.giaPhong,
                                hinhAnh = ph.hinhAnh,
                                tenLP = lp.tenLP,
                                maLoai = lp.maLoai,
+                               tinhTrang = ph.tinhTrang,
                            };
 
                 List<Room> listPhong = tList.OrderBy(item => new Random().Next()).ToList();
@@ -120,7 +121,7 @@ namespace Hotel.Controllers
                                danhGia = ph.danhGia,
                                tenPhong = ph.tenPhong,
                                giamGia = ph.giamGia,
-                               giaPhong = lp.giaPhong,
+                               giaPhong = ph.giaPhong,
                                hinhAnh = ph.hinhAnh,
                                tenLP = lp.tenLP,
                                maLoai = lp.maLoai,
