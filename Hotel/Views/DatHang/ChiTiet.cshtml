@@ -1,110 +1,260 @@
-﻿@{
-    ViewBag.Title = "ChiTiet";
-    Layout = "~/Views/Shared/LayoutHotel.cshtml";
+﻿@using Hotel.Models
+@{
+  ViewBag.Title = "ChiTiet";
+  Layout = "~/Views/Shared/LayoutHotel.cshtml";
+  List<DichVu> dichVus = (List<DichVu>)ViewBag.DichVus;
 }
-@using Hotel.Models
 @model Cart
 
 <div class="container-fluid m-auto" style="width: 85%;">
-    <h2 class="hero-title underline">giỏ hàng</h2>
+  <h2 class="hero-title underline">order</h2>
 
-    <div class="cart-products-container">
-        
-        <div class="cart-product-item-list">
-            @if (Model == null)
-            {
-                <h2></h2>
-            }
-            else
-            {
-                foreach (Room phong in Model.items)
-                {
-                <form action="/DatHang/EditMatHang?tenPhong=@phong.tenPhong" method="post" class="cart-product-item">
-                    <button type="submit" class="edit-icon-container">
-                        <i class="fas fa-edit"></i>
-                    </button>
+  <div class="cart-products-container">
 
-                    <a href="/DatHang/XoaMatHang?tenPhong=@phong.tenPhong" class="close-icon-container">
-                        <i class="fas fa-trash-alt"></i>
-                    </a>
+    <div class="cart-product-item-list">
+      @if (Model == null)
+      {
+        <h2></h2>
+      }
+      else
+      {
+        foreach (Room phong in Model.items)
+        {
+          <form action="/DatHang/EditMatHang?tenPhong=@phong.tenPhong" method="post" class="cart-product-item">
+            <a class="edit-icon-container" href="#" data-toggle="modal" data-target="#modal-services" data-name="@phong.tenPhong">
+              <i class="fas fa-edit">
+              </i>
+            </a>
 
-                    <div class="cart-product-img">
-                        <img src="~/Content/HinhAnh/@phong.hinhAnh" />
-                    </div>
+            <a href="/DatHang/XoaMatHang?tenPhong=@phong.tenPhong" class="close-icon-container">
+              <i class="fas fa-trash-alt"></i>
+            </a>
 
-                    <div class="cart-product-info">
-                        @if (phong.giamGia != null)
-                        {
-                            <h4 class="cart-product-price">@phong.tenPhong.ToUpper()<span style="margin-left: 1rem;">$@string.Format("{0:#.00}", phong.giaPhong - phong.giamGia)</span><small>$@string.Format("{0:#.00}", phong.giaPhong)</small></h4>
-                        }
-                        else
-                        {
-                            <h4 class="cart-product-price">@phong.tenPhong.ToUpper()<span style="margin-left: 1rem;">$@string.Format("{0:#.00}", phong.giaPhong)</span></h4>
-                        }
-
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
-                  dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
-                  amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
-
-                        </p>
-
-                        <div class="input-date">
-                            <input name="ngayDat" type="date" value="@phong.ngayDat.ToString("yyyy-MM-dd")" min="2021-01-02" max="2029-01-02" />
-                            <input name="ngayTra" type="date" value="@phong.ngayTra.ToString("yyyy-MM-dd")" min="2021-01-04" max="2029-01-04" />
-                        </div>
-                    </div>
-                </form>
-                }
-            }
-
-        </div>
-
-        <div class="cart-total">
-            <h4>tổng cộng</h4>
-
-            <div class="cart-total-text">
-                <div>
-                    <p class="">giá tiền</p>
-                    @if (Model == null)
-                    {
-                        <p>$0.00</p>
-                    }
-                    else
-                    {
-                        <p>$@string.Format("{0:#.00}", @Model.sumMoney())</p>
-                    }
-                </div>
-
-                <div>
-                    <p>giảm giá</p>
-                    @if (Model == null)
-                    {
-                        <p>$0.00</p>
-                    }
-                    else
-                    {
-                        <p>$@string.Format("{0:#.00}", Model.sumDiscountMoney())</p>
-                    }
-                </div>
-
-                <div>
-                    <p>số lượng</p>
-                    @if (Model == null)
-                    {
-                        <p>0</p>
-                    }
-                    else
-                    {
-                        <p>@Model.count()</p>
-                    }
-
-                </div>
+            <div class="cart-product-img">
+              <img src="~/Content/HinhAnh/@phong.hinhAnh" />
             </div>
 
-            <a href="/DatHang/ThanhToanDonHang?thanhToan=true" class="cart-buy-btn">thanh toán</a>
-        </div>
+            <div class="cart-product-info">
+              @if (phong.giamGia != null)
+              {
+                <h4 class="cart-product-price">@phong.tenPhong.ToUpper()<span style="margin-left: 1rem;">$@string.Format("{0:#.00}", phong.calculateTotalMoney())</span><small>$@string.Format("{0:#.00}", phong.giaPhong)</small></h4>
+              }
+              else
+              {
+                <h4 class="cart-product-price">@phong.tenPhong.ToUpper()<span style="margin-left: 1rem;">$@string.Format("{0:#.00}", phong.calculateTotalMoney())</span></h4>
+              }
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+
+              </p>
+
+              <div class="d-flex">
+                <div class="input-date">
+                  <input name="ngayDat" type="date" value="@phong.ngayDat.ToString("yyyy-MM-dd")" min="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                  <input name="ngayTra" type="date" value="@phong.ngayTra.ToString("yyyy-MM-dd")" />
+                </div>
+                <button type="submit" class="btn btn-success px-3" data-name="@phong.tenPhong">Edit</button>
+              </div>
+            </div>
+          </form>
+        }
+      }
 
     </div>
+
+    <div class="cart-total">
+      <h4>total</h4>
+
+      <div class="cart-total-text">
+        <div>
+          <p class="">price</p>
+          @if (Model == null)
+          {
+            <p>$0.00</p>
+          }
+          else
+          {
+            <p>$@string.Format("{0:#.00}", @Model.sumMoney())</p>
+          }
+        </div>
+
+        <div>
+          <p>discount</p>
+          @if (Model == null)
+          {
+            <p>$0.00</p>
+          }
+          else
+          {
+            <p>$@string.Format("{0:#.00}", Model.sumDiscountMoney())</p>
+          }
+        </div>
+
+        <div>
+          <p>quantity</p>
+          @if (Model == null)
+          {
+            <p>0</p>
+          }
+          else
+          {
+            <p>@Model.count()</p>
+          }
+
+        </div>
+      </div>
+
+      @if (Model != null && Model.items.Count != 0)
+      {
+        <a href="/DatHang/ThanhToanDonHang?thanhToan=true" class="cart-buy-btn">buy</a>
+      }
+    </div>
+
+  </div>
 </div>
+
+
+@{ Html.RenderPartial("_Scripts"); }
+@{ Html.RenderPartial("_ServicesModal", null, new ViewDataDictionary { { "dichVus", dichVus } }); }
+
+
+<script>
+  $(document).ready(function (e) {
+    setUpEdit();
+
+    function setUpEdit() {
+      document.querySelector(".cart-product-item-list").addEventListener("click", (e) => {
+        const listCheckBox = Array.from(document.querySelectorAll(".add-checkbox"));
+
+        if (e.target.classList.contains("fa-edit")) {
+          for (let checkbox of listCheckBox) {
+            checkbox.checked = false;
+            checkbox.disabled = false;
+          }
+
+          const editIcon = e.target.parentElement;
+
+          postData("/DatHang/GetServicesDetail", { tenPhong: editIcon.dataset.name }).then((result) => {
+            for (let maDichVu of result.maDichVus) {
+              const checkedBox = listCheckBox.find(item => item.value === maDichVu);
+              checkedBox.checked = true;
+            }
+          });
+        }
+
+        else if (e.target.classList.contains("btn-success")) {
+          e.preventDefault();
+          const dateContainer = e.target.previousElementSibling;
+          const maDichVus = [];
+
+          for (let checkbox of listCheckBox) {
+            if (checkbox.checked) {
+              maDichVus.push(checkbox.value);
+            }
+          }
+
+          const data = {
+            room: {
+              tenPhong: e.target.dataset.name,
+              ngayDat: dateContainer.querySelector('[name="ngayDat"]').value,
+              ngayTra: dateContainer.querySelector('[name="ngayTra"]').value,
+            },
+            maDichVus,
+          }
+
+          console.log(data);
+
+          postData("/DatHang/EditMatHang", data).then((result) => {
+            console.log("done");
+            window.location.href = window.location.origin + result.message;
+          });
+        }
+      })
+
+    }
+
+    async function postData(url = '', data = {}) {
+      // Default options are marked with *
+      const response = await fetch(url, {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+          'Content-Type': 'application/json'
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify(data) // body data type must match "Content-Type" header
+      });
+
+      return response.json(); // parses JSON response into native JavaScript objects
+    }
+
+    $("#add-services-checkbox-container").click((e) => {
+      const listInput = $(".add-checkbox");
+
+      if ($(e.target).val() == listInput.length) {
+        if ($(e.target).prop("checked")) {
+          listInput.each((index, item) => {
+            if (index !== listInput.length - 1) {
+              $(item).prop("checked", false);
+              $(item).prop("disabled", true);
+            }
+          })
+        } else {
+          listInput.each((index, item) => {
+            if (index !== listInput.length - 1) $(item).prop("disabled", false);
+          })
+        }
+      } else {
+        $(listInput[listInput.length - 1]).prop("checked", false);
+      }
+    })
+
+    updateDate();
+
+    function updateDate() {
+      const checkInDates = document.querySelectorAll('[name="ngayDat"]');
+
+      for (let date of checkInDates) {
+        const checkoutDateVal = new Date(date.value);
+        const checkoutDateMin = new Date(checkoutDateVal.setDate(checkoutDateVal.getDate() + 1));
+        const month = (checkoutDateMin.getUTCMonth() + 1).toString().padStart(2, '0'); //months from 1-12
+        const day = checkoutDateMin.getUTCDate().toString().padStart(2, "0");
+        const year = checkoutDateMin.getUTCFullYear();
+
+        const newdate = year + "-" + month + "-" + day;
+
+        date.nextElementSibling.min = newdate;
+      }
+    }
+
+    $(".cart-product-item-list").click(function (e) {
+      if ($(e.target).prop("name") == "ngayDat") {
+        $(e.target).change(function (e) {
+          const checkoutDateVal = new Date($(e.target).val());
+          const checkoutDateMin = new Date(checkoutDateVal.setDate(checkoutDateVal.getDate() + 1));
+          const month = (checkoutDateMin.getUTCMonth() + 1).toString().padStart(2, '0'); //months from 1-12
+          const day = checkoutDateMin.getUTCDate().toString().padStart(2, "0");
+          const year = checkoutDateMin.getUTCFullYear();
+
+          const newdate = year + "-" + month + "-" + day;
+
+          $(e.target.nextElementSibling).prop("min", newdate);
+          $(e.target.nextElementSibling).val(newdate);
+        })
+      }
+    })
+
+  })
+
+
+</script>
+
+

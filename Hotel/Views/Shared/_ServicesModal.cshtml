@@ -1,0 +1,42 @@
+﻿@using Hotel.Models
+@{
+  List<DichVu> dichVus = (List<DichVu>)ViewData["dichVus"];
+}
+
+<div class="modal fade" id="modal-services" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Services Picker</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <img class="img-fluid d-block m-auto" id="modal-img" src="https://taker.io/wp-content/uploads/2019/10/Online-Ordering-System-for-Restaurants-min.png" style="width: 200px;" />
+
+        <form action="" method="post" class="mt-3" id="create-order-form">
+          <div class="form-group row">
+            <label for="modal-add-name-text" class="col-sm-4 col-form-label">Service name</label>
+            <div class="col-sm-8" id="add-services-checkbox-container">
+              @foreach (DichVu dv in dichVus)
+              {
+                <div class="ml-4">
+                  <input class="form-check-input add-checkbox" type="checkbox" value="@dv.maDichVu" id="add-service-@dv.maDichVu" name="@dv.maDichVu">
+                  <label class="form-check-label" for="add-service-@dv.maDichVu">
+                    @dv.tenDichVu --- <b>$@string.Format("{0:#.00}", dv.giaTien)</b>
+                  </label>
+                </div>
+              }
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+

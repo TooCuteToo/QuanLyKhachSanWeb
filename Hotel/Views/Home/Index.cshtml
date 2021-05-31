@@ -43,7 +43,7 @@
                                 <a class="n-link" href="#">About us</a>
                             </li>
                             <li class="nav-item n-item">
-                                <a class="n-link" href="#">Contact us</a>
+                              <a class="n-link" href="/Home/ContactUs">Contact us</a>
                             </li>
                         </ul>
                     </div>
@@ -70,17 +70,17 @@
                         <div class="row no-margin">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <span class="form-label">PHÒNG</span>
+                                    <span class="form-label">ROOM</span>
                                     <input class="form-control" type="text" name="tenPhong"/>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <span class="form-label">LOẠI</span>
+                                    <span class="form-label">TYPE</span>
                                     <select class="form-control" name="loaiPhong">
-                                        <option value="LP01">PHÒNG 1 NGƯỜI</option>
-                                        <option value="LP02">PHÒNG 2 NGƯỜI</option>
-                                        <option value="LP03">PHÒNG 4 NGƯỜI</option>
+                                        <option value="lp01">1 PERSON</option>
+                                        <option value="lp02">2 PEOPLE</option>
+                                        <option value="lp03">4 PEOPLE</option>
                                     </select>
                                     <span class="select-arrow"></span>
                                 </div>
@@ -100,7 +100,7 @@
     <div class="mt-5">
         <div class="container-fluid w-75 m-auto">
             <h1 class="uppercase hero-title mb-5 w-25">
-                <span class="underline">Thông tin</span>
+                <span class="underline">Information</span>
             </h1>
             <div class="row">
                 <div class="col-6">
@@ -137,12 +137,12 @@
                     <br />
                     <button
                         class="btn form-control bg-warning text-white text-uppercase">
-                        Đặt ngay
+                        Booking now
                     </button>
                 </div>
 
                 <div class="my-4">
-                    <h2 class="hero-title underline mt-5">Phòng nổi bậc</h2>
+                    <h2 class="hero-title underline mt-5">Hot room</h2>
                     @Html.Action("KhoiTaoDanhSachPhong", "Home")
                 </div>
             </div>
@@ -151,7 +151,7 @@
             <div class="row w-80 m-auto">
                 <div class="col-md-3">
                     <br />
-                    <h5 style="color: orange">LIÊN HỆ</h5>
+                    <h5 style="color: orange">CONTACT</h5>
                     <br />
                     <div class="row">
                         <div class="col">
@@ -172,7 +172,7 @@
                 </div>
                 <div class="col-md-5">
                     <br />
-                    <h5 style="color: orange">GIỚI THIỆU</h5>
+                    <h5 style="color: orange">ABOUT</h5>
                     <br />
                     <div class="row">
                         <div class="col">
@@ -200,7 +200,7 @@
                 </div>
                 <div class="col-md-4">
                     <br />
-                    <h5 style="color: orange">ĐĂNG KÝ NHẬN THÔNG TIN</h5>
+                    <h5 style="color: orange">SUBSCRIPTION</h5>
                     <br />
                     <input
                         type="text"

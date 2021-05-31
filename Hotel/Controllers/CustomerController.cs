@@ -4,95 +4,84 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Hotel.Models;
+using Hotel.Helpers;
 
 namespace Hotel.Controllers
 {
-    public class CustomerController : Controller
+  public class CustomerController : Controller
+  {
+    //
+    // GET: /Customer/
+
+    [HttpGet]
+    public ActionResult Login(int id = 0)
     {
-        //
-        // GET: /Customer/
-
-        [HttpGet]
-        public ActionResult Login(int id = 0)
-        {
-            ViewBag.id = id;
-            return View();
-        }
-
-        [HttpGet]
-        public ActionResult Logout()
-        {
-            Session["kh"] = null;
-            Session["cart"] = null;
-
-            return RedirectToAction("Index", "Home");
-        }
-
-        [HttpPost]
-        public ActionResult Login(FormCollection fc, int id = 0)
-        {
-            using (DataClasses1DataContext db = new DataClasses1DataContext())
-            {
-                if (id == 0)
-                {
-                    string loginEmail = fc["Email"];
-                    string loginPass = fc["Password"];
-
-                    KhachHang kh = db.KhachHangs.FirstOrDefault(item => item.email == loginEmail && item.pass == loginPass);
-
-                    if (kh != null)
-                    {
-                        Session["kh"] = kh;
-                        return RedirectToAction("Index", "Home");
-                    }
-
-                    return View();
-                }
-
-                string regName = fc["Name"];
-                string regEmail = fc["Email"];
-                string regPass = fc["Password"];
-
-                KhachHang regKh = new KhachHang()
-                {
-                    tenKH = regName,
-                    email = regEmail,
-                    pass = regPass,
-                    gioiTinh = "Nam",
-                };
-
-                db.KhachHangs.InsertOnSubmit(regKh);
-                db.SubmitChanges();
-
-                return View();
-            }
-        }
-
-
-        //[HttpPost]
-        //public ActionResult ThemPhongYeuThich(string tenPhong)
-        //{
-        //    using (DataClasses1DataContext db = new DataClasses1DataContext())
-        //    {
-        //        KhachHang kh = Session["kh"] as KhachHang;
-
-        //        if (kh == null)
-        //        {
-        //            return RedirectToAction("Login", "Customer", new { id = 0 });
-        //        }
-
-        //        Room phong = new Room(tenPhong);
-
-        //        db.PhongYeuThiches.InsertOnSubmit(new PhongYeuThich()
-        //        {
-        //            tenPhong = phong.tenPhong,
-        //            email = kh.email,
-        //        });
-
-        //        db.SubmitChanges();
-
-        //        return RedirectToAction("Index", "Home");
-        //    }
-        //}
+      ViewBag.id = id;
+      return View();
     }
+
+    [HttpGet]
+    public ActionResult Logout()
+    {
+      Session["kh"] = null;
+      Session["cart"] = null;
+
+      return RedirectToAction("Index", "Home");
+    }
+
+    [HttpPost]
+    public JsonResult Login(KhachHang loginCustomer, int id = 0)
+    {
+      if (id == 0)
+      {
+        KhachHang kh = DBCustomer.getCustomer(loginCustomer);
+
+        if (kh != null)
+        {
+          Session["kh"] = kh;
+          return Json(new { message = "Success" });
+        }
+
+        return Json(new { message = "Fail" });
+      }
+
+      loginCustomer.gioiTinh = "Female";
+      KhachHang newCustomer = DBCustomer.createCustomer(loginCustomer);
+
+      if (newCustomer.tenKH != null)
+      {
+        return Json(new { newCustomer = loginCustomer });
+
+      }
+
+      return Json(new { message = "Email is already existed!!!" });
+    }
+
+
+    //[HttpPost]
+    //public ActionResult ThemPhongYeuThich(string tenPhong)
+    //{
+    //    using (DataClasses1DataContext db = new DataClasses1DataContext())
+    //    {
+    //        KhachHang kh = Session["kh"] as KhachHang;
+
+    //        if (kh == null)
+    //        {
+    //            return RedirectToAction("Login", "Customer", new { id = 0 });
+    //        }
+
+    //        Room phong = new Room(tenPhong);
+
+    //        db.PhongYeuThiches.InsertOnSubmit(new PhongYeuThich()
+    //        {
+    //            tenPhong = phong.tenPhong,
+    //            email = kh.email,
+    //        });
+
+    //        db.SubmitChanges();
+
+    //        return RedirectToAction("Index", "Home");
+    //    }
+    //}
+  }
 }

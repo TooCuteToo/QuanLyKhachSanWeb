@@ -20,12 +20,12 @@
                 <span class="product-catagory">@phong.tenLP</span>
                 <div class="product-sub-details">
                     <h4><a href="/Detail/Index/@phong.tenPhong">@phong.tenPhong</a></h4>
-                    @if (phong.tinhTrang == "Đặt") {
-                        <span class="product-instock">Hết phòng</span>    
+                    @if (phong.tinhTrang == "occupied") {
+                        <span class="product-instock">OCCUPIED</span>    
                     }
 
                     @if (phong.inStock) {
-                        <span class="product-instock">trong giỏ</span>   
+                        <span class="product-instock">IN CART</span>   
                     }
 
                 </div>

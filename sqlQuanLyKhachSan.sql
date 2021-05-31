@@ -7,121 +7,169 @@ go
 
 create table ChucVu
 (
-	MaCV varchar(11) not null,
+	MaCV varchar(10),
 	TenCV nvarchar(100),
-	Luong money,
 	CONSTRAINT PK_chucVu PRIMARY KEY(MaCV)
 )
 
 create table NhanVien
 (
-	MaNV varchar(11) not null,
+	MaNV int identity(1, 1),
 	TenNV nvarchar(100),
-	MaCV varchar(11),
+	Email varchar(30) unique,
+	Password varchar(30),
+	MaCV varchar(10),
 	DiaChi_NV nvarchar(200),
 	SDT_NV varchar(10),
-	GioiTinh nvarchar(5),
-	NgayVaoLam datetime,
+	GioiTinh nvarchar(10),
+	NgaySinh date,
 	CONSTRAINT PK_NhanVien PRIMARY KEY(MaNV),
 	CONSTRAINT FK_NhanVien_ChucVu FOREIGN KEY(MaCV) REFERENCES ChucVu(MaCV)
 )
 
 create table KhachHang
 (
-email varchar(30) primary key,
+maKH int identity(1, 1) primary key,
+email varchar(30) unique,
 tenKH nvarchar(100) not null,
 gioiTinh nvarchar(100),
-pass nvarchar(10),
+ngaySinh date,
+diaChi nvarchar(100),
+sdt nvarchar(10),
+pass nvarchar(10)
 )
 go
 
 create table LoaiPhong
 (
 maLoai varchar(10) primary key,
-tenLP nvarchar(100),
+tenlp nvarchar(100),
 )
 go
 
 create table Phong
 (
-tenPhong varchar(30) primary key,
+maPhong int identity(1, 1) primary key,
+tenPhong varchar(30) unique not null,
 tinhTrang nvarchar(50) not null,
 maLoai varchar(10) not null,
 hinhAnh varchar(30) not null,
 giaPhong money,
 giamGia money,
 danhGia float,
-constraint phong_maLP foreign key (maLoai) references LoaiPhong(maLoai)
+constraint phong_malp foreign key (maLoai) references LoaiPhong(maLoai)
 )
 go
+
+create table DichVu (
+	maDichVu int identity(1, 1) primary key,
+	tenDichVu varchar(50),
+	giaTien money
+)
 
 create table HoaDon
 (
-maHD varchar(10) primary key,
-email varchar(30) not null,
-tenPhong varchar(30) not null,
+maHD int identity(1, 1) primary key,
+maKH int,
+maNV int,
+email varchar(30),
+tenPhong varchar(30),
+maPhong int,
 ngayDat date,
 ngayTra date,
+tinhTrang bit,
 tienThanhToan money,
-constraint Hoadon_maPhong foreign key (tenPhong) references Phong(tenPhong),
-constraint Hoadon_CMND foreign key (email) references KhachHang(email)
+constraint Hoadon_maPhong foreign key (maPhong) references Phong(maPhong),
+constraint HoaDon_MAKH foreign key (maKH) references KhachHang(maKH),
+constraint HoaDon_MANV foreign key (maNV) references NhanVien(maNV)
 )
 go
 
-insert into ChucVu(MaCV, TenCV, Luong) values
-('admin',N'Administrator',20000000),
-('user',N'user',10000000)
+create table ChiTietDichVu (
+	maHD int,
+	maDichVu int,
+
+	constraint PK_CTDV primary key (maHD, maDichVu),
+	constraint FK_maHD foreign key (maHD) references HoaDon(maHD),
+	constraint FK_maDichVu foreign key (maDichVu) references DichVu(maDichVu)
+)
+
+insert into ChucVu(MaCV, TenCV) values
+('admin',N'Administrator'),
+('employee',N'Employee')
 
 set dateformat DMY
-insert into NhanVien(MaNV,TenNV,MaCV,DiaChi_NV,SDT_NV,GioiTinh,NgayVaoLam) values
-('NV001', N'Nguyễn Phương Thảo', 'admin', N'123,Tân Kì Tân Quý, Quận Tân Phú,tp Hồ Chí Minh', '0923456765', N'Nữ', '11/08/2019'),
-('NV002',N'Huỳnh Minh Anh','user',N'88, Lê Trọng Tấn, Quận Tân Phú, tp Hồ Chí Minh','098354555',N'Nữ','08/06/2019'),
-('NV003',N'Trần Hữu Minh','user',N'100,Tỉnh lộ 10, Quận Bình Tân,tp Hồ Chí Minh','0983322344',N'Nam','07/01/2019'),
-('NV004',N'Nguyễn Minh Nhật','user',N'100,Tên lửa, Quận Bình Tân,tp Hồ Chí Minh','0983433434',N'Nam','20/03/2019'),
-('NV005',N'Đào Ánh Mai','user',N'14,Đường số 7, Quận Bình Tân,tp Hồ Chí Minh','0983343434',N'Nữ','20/12/2018'),		
-('NV006',N'Nguyễn Ánh Nguyệt','user',N'14,Đường ab, Quận Long Biên,Hà Nội','0983343434',N'Nữ','15/10/2018'),
-('NV007',N'Hoàng Mai Linh','user',N'14,Đường ab, Quận Long Biên,Hà Nội','0983343434',N'Nữ','15/10/2018')
+insert into NhanVien(TenNV, Email, Password, MaCV, DiaChi_NV, SDT_NV, GioiTinh, NgaySinh) values
+(N'Nguyen Phuong Thao', 'thao@gmail.com', '123456', 'admin', N'123 Tan Ky Tan Quy', '0923456765', N'Male', '11/08/2001'),
+(N'Huynh Minh Anh', 'anh@gmail.com', '123456', 'employee',N'88 Le Trong Tan','098354555',N'Female','08/06/2000')
 
-
-insert into KhachHang values
-('my@gmail.com',N'Vũ Thị Hải My',N'Nữ', N'123'),
-('luan@gmail.com',N'Nguyễn Hoàng Luân',N'Nam', N'123'),
-('toan@gmail.com',N'Trần Đình Toàn',N'Nam', N'123'),
-('anh@gmail.com',N'Lê Thị Ngọc Ánh',N'Nữ', N'123'),
-('lam@gmail.com',N'Ngô Gia Lâm',N'Nam', N'123')
+set dateformat DMY
+insert into KhachHang (email, tenKH, gioiTinh, ngaySinh, diaChi, sdt, pass)
+values
+('my@gmail.com',N'Vu Thi Hai My',N'Female', '15/01/2003', 'Truong Chinh', '0983004421', N'123'),
+('luan@gmail.com',N'Nguyen Le Hoang Luan',N'Male', '29/05/2001', 'Truong Chinh', '0983004421', N'123'),
+('toan@gmail.com',N'Tran Dinh Toan',N'Male', '10/02/2000', 'Truong Chinh', '0983004421', N'123'),
+('anh@gmail.com',N'Le Thi Anh',N'Female', '12/06/2002', 'Truong Chinh', '0983004421', N'123'),
+('lam@gmail.com',N'Ngo Gia Lam',N'Male', '20/02/1999', 'Truong Chinh', '0983004421', N'123')
 
 
 insert into LoaiPhong  values
-('LP01',N'PHÒNG 1 NGƯỜI'),
-('LP02',N'PHÒNG 2 NGƯỜI'),
-('LP03',N'PHÒNG 4 NGƯỜI')
+('lp01',N'1 PERSON'),
+('lp02',N'2 PEOPLE'),
+('lp03',N'4 PEOPLE')
 
 INSERT INTO Phong values
-('Summer Room',N'Trống','LP01', 'hinh_0.jpg', 129.99, 50.99, 4.5),
-('Cool Room',N'Trống','LP01', 'hinh_1.jpg', 130.99, 30.99, 3.2),
-('Fair Room',N'Trống','LP02', 'hinh_2.jpg', 70.99, null, 2.4),
-('Nice Room',N'Trống','LP02', 'hinh_3.jpg', 80.99, 23.99, 3.5),
-('LP Room',N'Trống','LP03', 'hinh_4.jpg', 138.99, 35.99, 4.8),
-('LUX Room',N'Trống','LP03', 'hinh_5.jpg', 250.99, 70.99, 5),
-('Night Room',N'Trống','LP03', 'hinh_6.jpg', 170.99, null, 2.2),
-('Morning Room',N'Trống','LP01', 'hinh_7.jpg', 25.99, 5.99, 3.1),
-('Jan Room',N'Trống','LP01', 'hinh_8.jpg', 30.99, 4.99, 3.2),
-('Nock Room',N'Trống','LP02', 'hinh_9.jpg', 32.5, 12.99, 4.1),
-('No Room',N'Trống','LP02', 'hinh_10.jpg', 70.99, null, 2.3),
-('Black Room',N'Trống','LP03', 'hinh_11.jpg', 80.99, 28.99, 3.8),
-('Null Room',N'Trống','LP03', 'hinh_12.jpg', 35.99, null, 2.3),
-('Dart Room',N'Trống','LP01', 'hinh_13.jpg', 67.99, null, 3.2),
-('Boot Room',N'Trống','LP02', 'hinh_14.jpg', 80.99, 29.99, 4.1),
-('Nine Room',N'Trống','LP03', 'hinh_15.jpg', 36.99, 29.99, 2.9),
-('Foul Room',N'Trống','LP03', 'hinh_16.jpg', 72.99, null, 1.1),
-('Sin Room',N'Trống','LP02', 'hinh_17.jpg', 80.99, 50.99, 3.2),
-('Pok Room',N'Trống','LP01', 'hinh_18.jpg', 30.99, 8.99, 4.8)
+('Summer Room',N'empty','lp01', 'hinh_0.jpg', 129.99, 50.99, 4.5),
+('Cool Room',N'empty','lp01', 'hinh_1.jpg', 130.99, 30.99, 3.2),
+('Fair Room',N'empty','lp02', 'hinh_2.jpg', 70.99, null, 2.4),
+('Nice Room',N'empty','lp02', 'hinh_3.jpg', 80.99, 23.99, 3.5),
+('lp Room',N'empty','lp03', 'hinh_4.jpg', 138.99, 35.99, 4.8),
+('LUX Room',N'empty','lp03', 'hinh_5.jpg', 250.99, 70.99, 5),
+('Night Room',N'empty','lp03', 'hinh_6.jpg', 170.99, null, 2.2),
+('Morning Room',N'empty','lp01', 'hinh_7.jpg', 25.99, 5.99, 3.1),
+('Jan Room',N'empty','lp01', 'hinh_8.jpg', 30.99, 4.99, 3.2),
+('Nock Room',N'empty','lp02', 'hinh_9.jpg', 32.5, 12.99, 4.1),
+('No Room',N'empty','lp02', 'hinh_10.jpg', 70.99, null, 2.3),
+('Black Room',N'empty','lp03', 'hinh_11.jpg', 80.99, 28.99, 3.8),
+('Null Room',N'empty','lp03', 'hinh_12.jpg', 35.99, null, 2.3),
+('Dart Room',N'empty','lp01', 'hinh_13.jpg', 67.99, null, 3.2),
+('Boot Room',N'empty','lp02', 'hinh_14.jpg', 80.99, 29.99, 4.1),
+('Nine Room',N'empty','lp03', 'hinh_15.jpg', 36.99, 29.99, 2.9),
+('Foul Room',N'empty','lp03', 'hinh_16.jpg', 72.99, null, 1.1),
+('Sin Room',N'empty','lp02', 'hinh_17.jpg', 80.99, 50.99, 3.2),
+('Pok Room',N'empty','lp01', 'hinh_18.jpg', 30.99, 8.99, 4.8)
 go
+
+insert into DichVu(tenDichVu, giaTien)
+values('Make-up room', 20.99),
+('Tranportation', 10.99),
+('Money exchance', 2.99),
+('Bell', 1.99),
+('Catering', 30.99),
+('None', 0)
+
+drop table ChucVu
+drop table NhanVien
 
 drop table LoaiPhong
 drop table Phong
 drop table HoaDon
+drop table KhachHang
 
 select * from LoaiPhong
 select * from Phong
 select * from HoaDon
+select * from NhanVien
+select * from KhachHang
+select * from DichVu
+select * from ChiTietDichVu
+
+update Phong
+set TinhTrang = 'occupied'
+where tenPhong = 'Nock Room'
+
+select * from KhachHang
+where maKH = 6
+
+delete HoaDon
+where maHD = 4

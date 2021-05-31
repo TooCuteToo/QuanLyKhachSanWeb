@@ -1,118 +1,212 @@
 ﻿@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/LayoutHotel.cshtml";
-    List<Room> suggestRoom = ViewBag.suggestRoom as List<Room>;
+  ViewBag.Title = "Index";
+  Layout = "~/Views/Shared/LayoutHotel.cshtml";
+  List<Room> suggestRoom = ViewBag.suggestRoom as List<Room>;
+  List<DichVu> dichVus = ViewBag.DichVus as List<DichVu>;
 }
 
 @using Hotel.Models
 @model Room
 
 <div class="container-fluid w-75 m-auto">
-    <form action="/DatHang/ThemMatHang?tenPhong=@Model.tenPhong" method="post" class="detail-container">
-        <div class="detail-img-container">
-            <img src="~/Content/HinhAnh/@Model.hinhAnh"/>
+  <form action="/DatHang/ThemMatHang?tenPhong=@Model.tenPhong" method="post" class="detail-container">
+    <div class="detail-img-container">
+      <img src="~/Content/HinhAnh/@Model.hinhAnh" />
+    </div>
+
+    <div class="detail-info-container">
+      <div class="detail-info-title">
+        <small>@Model.tenLP</small>
+        <div class="detail-subinfo">
+          <h1 class="underline">@Model.tenPhong</h1>
+          @if (Model.tinhTrang == "occupied")
+          {
+            <p class="in-stock">occupied</p>
+          }
+
+          @if (Model.inStock)
+          {
+            <p class="in-stock">in cart</p>
+          }
         </div>
+      </div>
 
-        <div class="detail-info-container">
-            <div class="detail-info-title">
-                <small>@Model.tenLP</small>
-                <div class="detail-subinfo">
-                    <h1 class="underline">@Model.tenPhong</h1>
-                    @if (Model.tinhTrang == "Đặt")
-                    {
+      <div class="detail-info-price my-3">
+        @if (Model.giamGia != null)
+        {
+          <h3>$@string.Format("{0:#.00}", @Model.giaPhong - Model.giamGia)</h3>
+        }
+        else
+        {
+          <h3>$@string.Format("{0:#.00}", @Model.giaPhong)</h3>
+        }
 
-                        <p class="in-stock">hết phòng</p>
-                    }
+        <div class="detail-star">
+          @if (@Model.danhGia != null)
+          {
+            decimal temp = Decimal.Parse(@Model.danhGia.ToString());
 
-                    @if (Model.inStock)
-                    {
-                        <p class="in-stock">trong giỏ</p>
-                    }
-                </div>
-            </div>
-
-            <div class="detail-info-price my-3">
-                <h3>$@string.Format("{0:#.00}", @Model.giaPhong)</h3>
-                <div class="detail-star">
-                    @if (@Model.danhGia != null)
-                    {
-                        decimal temp = Decimal.Parse(@Model.danhGia.ToString());
-
-                        for (int i = 0; i < @Math.Floor(temp); ++i)
-                        {
-                        <i class="fa fa-star" aria-hidden="true"></i>    
-                        }
-                    }
-                </div>
-            </div>
-
-            <p class="detail-des">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
-            </p>
-
-            <div class="input-date my-2">
-                <input name="ngayDat" type="date" value="2021-01-02" min="2021-01-02" max="2029-01-02">
-                <input name="ngayTra" type="date" value="2021-01-04" min="2021-01-04" max="2029-01-04">
-            </div>
-
-            <button type="submit" class="detail-add-btn">
-                THÊM VÀO GIỎ
-            </button>
-
-            
-        </div>
-    </form>
-
-    <div class="suggest-product-container">
-        <h2 class="hero-title underline mt-2">bạn có thể sẽ thích</h2>
-
-        <div class="product-container my-5">
-            @foreach (Room phong in suggestRoom)
+            for (int i = 0; i < @Math.Floor(temp); ++i)
             {
-                <div class="product-card">
-                    @if (phong.danhGia >= 4)
-                    {
-                        <div class="badge">HOT</div>
-                    }
-                    <div class="product-tumb">
-                        <img
-                    src="/Content/HinhAnh/@phong.hinhAnh"
-                    alt="" />
-                    </div>
-                    <div class="product-details">
-                        <span class="product-catagory">@phong.tenLP</span>
-                        <h4><a href="/Detail/Index/@phong.tenPhong">@phong.tenPhong</a></h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Vero, possimus nostrum!
-                        </p>
-                        <div class="product-bottom-details">
-                            @if (phong.giamGia != null)
-                            {
-                                <div class="product-price"><small>$@string.Format("{0:#.00}", @phong.giaPhong)</small>$@string.Format("{0:#.00}", @phong.giamGia)</div>   
-                            }
-                            else
-                            {   
-                                <div class="product-price">$@string.Format("{0:#.00}", @phong.giaPhong)</div>     
-                            }
-
-                            <div class="product-links">
-                                <button><i class="fa fa-heart"></i></button>
-                                <button><i class="fa fa-shopping-cart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <i class="fa fa-star" aria-hidden="true"></i>
             }
+          }
         </div>
-    </div>
+      </div>
 
-    <div class="same-product-container">
-        <h2 class="hero-title underline mt-2">phòng cùng loại</h2>
-        @Html.Action("KhoiTaoDanhSachPhong", "Home", new { maLoai = Model.maLoai })
+      <p class="detail-des">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+        ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+      </p>
+
+      <div class="input-date my-2">
+        <input name="ngayDat" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" min="@DateTime.Now.ToString("yyyy-MM-dd")">
+        <input name="ngayTra" type="date">
+        <a class="btn btn-info btn-sm" href="#" data-toggle="modal" data-target="#modal-services" style="padding: 0.9rem;">
+          <i class="fas fa-question">
+          </i>
+          Services
+        </a>
+      </div>
+
+      @if (Model.tinhTrang != "occupied")
+      {
+        <button type="submit" class="detail-add-btn">
+          ADD TO CART
+        </button>
+      }
+
+
     </div>
+  </form>
+
+  <div class="suggest-product-container">
+    <h2 class="hero-title underline mt-2">bạn có thể sẽ thích</h2>
+
+    <div class="product-container my-5">
+      @foreach (Room phong in suggestRoom)
+      {
+        <div class="product-card">
+          @if (phong.danhGia >= 4)
+          {
+            <div class="badge">HOT</div>
+          }
+          <div class="product-tumb">
+            <img src="/Content/HinhAnh/@phong.hinhAnh"
+                 alt="" />
+          </div>
+          <div class="product-details">
+            <span class="product-catagory">@phong.tenLP</span>
+            <h4><a href="/Detail/Index/@phong.tenPhong">@phong.tenPhong</a></h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Vero, possimus nostrum!
+            </p>
+            <div class="product-bottom-details">
+              @if (phong.giamGia != null)
+              {
+                <div class="product-price"><small>$@string.Format("{0:#.00}", @phong.giaPhong)</small>$@string.Format("{0:#.00}", @phong.giamGia)</div>
+              }
+              else
+              {
+                <div class="product-price">$@string.Format("{0:#.00}", @phong.giaPhong)</div>
+              }
+
+              <div class="product-links">
+                <button><i class="fa fa-heart"></i></button>
+                <button><i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="same-product-container">
+    <h2 class="hero-title underline mt-2">phòng cùng loại</h2>
+    @Html.Action("KhoiTaoDanhSachPhong", "Home", new { maLoai = Model.maLoai })
+  </div>
 </div>
+
+@{ Html.RenderPartial("_Scripts"); }
+@{ Html.RenderPartial("_ServicesModal", null, new ViewDataDictionary { { "dichVus", dichVus } }); }
+
+<script>
+  $(document).ready(function (e) {
+    updateDate();
+    setUpCreateOrder();
+
+    function setUpCreateOrder() {
+      const form = document.querySelector(".detail-container");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const url = e.target.action;
+        const listCheckbox = document.querySelectorAll(".add-checkbox");
+        const listCheckedBox = Array.from(listCheckbox).filter(item => item.checked);
+        const maDichVu = listCheckedBox.map(item => item.value);
+
+        const data = {
+          hd: {
+            ngayDat: document.querySelector('[name="ngayDat"]').value,
+            ngayTra: document.querySelector('[name="ngayTra"]').value,
+          },
+          maDichVu
+        };
+
+        postData(url, data).then((result) => {
+          console.log(result);
+
+          const origin = window.location.origin;
+          window.location.href = origin + result.message;
+        })
+
+      });
+    }
+
+    // Example POST method implementation:
+    async function postData(url = '', data = {}) {
+      // Default options are marked with *
+      const response = await fetch(url, {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+          'Content-Type': 'application/json'
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify(data) // body data type must match "Content-Type" header
+      });
+
+      return response.json(); // parses JSON response into native JavaScript objects
+    }
+
+
+    function updateDate() {
+      const checkoutDateVal = new Date($("[name=ngayDat]").val());
+      const checkoutDateMin = new Date(checkoutDateVal.setDate(checkoutDateVal.getDate() + 1));
+      const month = (checkoutDateMin.getUTCMonth() + 1).toString().padStart(2, '0'); //months from 1-12
+      const day = checkoutDateMin.getUTCDate().toString().padStart(2, "0");
+      const year = checkoutDateMin.getUTCFullYear();
+
+      const newdate = year + "-" + month + "-" + day;
+
+      $("[name=ngayTra]").prop("min", newdate);
+      $("[name=ngayTra]").val(newdate);
+    }
+
+    $("[name=ngayDat]").change(function (e) {
+      updateDate();
+    })
+
+  })
+
+
+</script>
 

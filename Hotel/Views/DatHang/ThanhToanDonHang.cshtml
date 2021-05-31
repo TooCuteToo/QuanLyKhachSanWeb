@@ -1,123 +1,138 @@
 ﻿@using Hotel.Models
 @{
-    ViewBag.Title = "ThanhToanDonHang";
-    Layout = "~/Views/Shared/LayoutHotel.cshtml";
-    KhachHang kh = ViewBag.kh as KhachHang;
+  ViewBag.Title = "ThanhToanDonHang";
+  Layout = "~/Views/Shared/LayoutHotel.cshtml";
+  KhachHang kh = ViewBag.kh as KhachHang;
 }
 
 @model Cart
 
-<form action="/DatHang/ThanhToanDonHang" method="post" class="bill-container" >
-    <h2 class="hero-title underline">Thông tin đơn hàng</h2>
+<h2 class="hero-title underline ml-5">Order information</h2>
 
-    <div class="my-5">
-        <h4 class="text-center">Thông tin khách hàng</h4>
-        <table class="table w-50 m-auto mt-5">
-            <tr>
-                <td>Tên khách hàng:</td>
-                <td>@kh.tenKH</td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td>@kh.email</td>
-            </tr>
-            <tr>
-                <td>Giới tính:</td>
-                <td>@kh.gioiTinh</td>
-            </tr>
-        </table>
-    </div>
-    <div class="my-5">
-        <h4 class="text-center mt-5">Thông tin đơn hàng</h4>
-        <table class="table w-50 m-auto">
-            <tr>
-                <td>Tên phòng</td>
-                <td>Tiền phòng</td>
-                <td>Ngày đặt</td>
-                <td>Ngày trả</td>
-                <td></td>
-            </tr>
+<form action="/DatHang/ThanhToanDonHang" method="post" class="container-fluid row">
 
-            @if (ViewBag.thanhToan == true)
-            {
-                foreach (Room phong in Model.items)
-                {
-                    <tr>
-                        <td>@phong.tenPhong</td>
-                        <td>$@string.Format("{0:#.00}", @phong.giaPhong)</td>
-                        <td>@phong.ngayDat.ToString("yyyy/MM/dd")</td>
-                        <td>@phong.ngayTra.ToString("yyyy/MM/dd")</td>
-                        <td>@Html.ActionLink("Delete", "XoaDonHang", "DatHang", new { tenPhong = @phong.tenPhong, thanhToan = true}, null)</td>
-                    </tr>
-                }
-            }
-            else
-            {
-                foreach (HoaDon hd in ViewBag.hoaDons)
-                {
-                    <tr>
-                        <td>@hd.tenPhong</td>
-                        <td>$@string.Format("{0:#.00}", @hd.tienThanhToan)</td>
-                        <td>@hd.ngayDat.Value.ToString("yyyy/MM/dd")</td>
-                        <td>@hd.ngayTra.Value.ToString("yyyy/MM/dd")</td>
-                        <td>@Html.ActionLink("Delete", "XoaDonHang", "DatHang", new { tenPhong = @hd.tenPhong, thanhToan = false}, null)</td>
-                    </tr>
-                }
-            }
-
-        </table>
-    </div>
-
-    <div class="cart-total w-50 m-auto">
-        <h4>tổng cộng</h4>
-
-        <div class="cart-total-text">
-            <div>
-                <p class="">giá tiền</p>
-                @if (ViewBag.tongTien != null)
-                {
-                    <p>$@string.Format("{0:#.00}", ViewBag.tongTien)</p>
-                }
-                else
-                {
-                    if (Model == null)
-                    {
-                        <p>$0.00</p>   
-                    }
-                    else
-                    {
-                    <p>$@string.Format("{0:#.00}", @Model.sumMoney())</p>
-                               
-                    }
-                }
-            </div>
-
-            <div>
-                <p>số lượng</p>
-                @if (ViewBag.soLuong != null)
-                {
-                    <p>@ViewBag.soLuong</p>
-                }
-                else
-                {
-                    if (Model == null)
-                    {
-                        <p>0</p>
-                    }
-                    else
-                    {
-                     <p>@Model.count()</p>   
-                    }
-                }
-
-            </div>
-        </div>
-
-        @if (ViewBag.tongTien == null)
+  <div class="my-5 col-md-4 w-100">
+    <h4 class="text-center">Customer information</h4>
+    <table class="table w-100 m-auto mt-5 table-bordered">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Email</td>
+          <td>Gender</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>@kh.tenKH</td>
+          <td>@kh.email</td>
+          <td>@kh.gioiTinh</td>
+        </tr>
+      </tbody>
+      
+    </table>
+  </div>
+  <div class="my-5 col-md-5">
+    <h4 class="text-center">Order information</h4>
+    <table class="table w-100 m-auto table-bordered">
+      <thead>
+        <tr>
+          <td>Room name</td>
+          <td>Room's price</td>
+          <td>Booking date</td>
+          <td>Checkout date</td>
+          
+          @if (ViewBag.thanhToan == true)
+          {
+            <td></td>
+          }
+        </tr>
+      </thead>
+      <tbody>
+        @if (ViewBag.thanhToan == true)
         {
-            <button type="submit" class="cart-buy-btn w-100">Xác nhận</button>
+          foreach (Room phong in Model.items)
+          {
+            <tr>
+              <td>@phong.tenPhong</td>
+              <td>$@string.Format("{0:#.00}", @phong.calculateTotalMoney())</td>
+              <td>@phong.ngayDat.ToString("yyyy/MM/dd")</td>
+              <td>@phong.ngayTra.ToString("yyyy/MM/dd")</td>
+              <td>@Html.ActionLink("Delete", "XoaDonHang", "DatHang", new { tenPhong = @phong.tenPhong, thanhToan = true }, null)</td>
+            </tr>
+          }
         }
+        else
+        {
+          foreach (HoaDon hd in ViewBag.hoaDons)
+          {
+            <tr>
+              <td>@hd.tenPhong</td>
+              <td>$@string.Format("{0:#.00}", @hd.tienThanhToan)</td>
+              <td>@hd.ngayDat.Value.ToShortDateString()</td>
+              <td>@hd.ngayTra.Value.ToShortDateString()</td>
+              <td>@Html.ActionLink("Delete", "XoaDonHang", "DatHang", new { tenPhong = hd.tenPhong, thanhToan = false }, null)</td>
+            </tr>
+          }
+        }
+      </tbody>
+      
+
+    </table>
+  </div>
+
+  <div class="cart-total w-50 m-auto col-md-3">
+    <h4>total</h4>
+
+    <div class="cart-total-text">
+      <div>
+        <p class="">price</p>
+        @if (ViewBag.tongTien != null)
+        {
+          <p>$@string.Format("{0:#.00}", ViewBag.tongTien)</p>
+        }
+        else
+        {
+          if (Model == null)
+          {
+            <p>$0.00</p>
+          }
+          else
+          {
+            <p>$@string.Format("{0:#.00}", @Model.sumMoney())</p>
+
+          }
+        }
+      </div>
+
+      <div>
+        <p>quantity</p>
+        @if (ViewBag.soLuong != null)
+        {
+          <p>@ViewBag.soLuong</p>
+        }
+        else
+        {
+          if (Model == null)
+          {
+            <p>0</p>
+          }
+          else
+          {
+            <p>@Model.count()</p>
+          }
+        }
+
+      </div>
     </div>
+
+    @if (!ViewBag.thanhToan)
+    {
+      <div></div>
+    }
+    else
+    {
+      <button type="submit" class="cart-buy-btn w-100">BUY</button>
+    }
+  </div>
 
 </form>
-</div>

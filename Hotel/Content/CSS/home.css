@@ -34,39 +34,39 @@ body {
   z-index: 10;
 }
 
-.n-link, .lv2-menu li a {
+.n-link {
   color: white;
   text-decoration: none;
   transition: all 0.1s linear;
   padding: 0 1rem;
 }
 
-.n-link:hover, .lv2-menu li a:hover {
-  color: rgba(241, 196, 15, 1);
-  text-decoration: none;
-}
+  .n-link:hover, .lv2-menu li a:hover {
+    color: rgba(241, 196, 15, 1);
+    text-decoration: none;
+  }
 
 .lv2-menu li a {
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.1s linear;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.1s linear;
 }
 
 .lv2-menu {
-    position: absolute;
-    display: none;
-    list-style: none;
-    text-align: left;
-    z-index: 1;
-    padding: 0.5rem;
+  position: absolute;
+  display: none;
+  list-style: none;
+  text-align: left;
+  z-index: 1;
+  padding: 1rem;
 }
 
-.lv2-menu li {
+  .lv2-menu li {
     text-align: center;
-    width: 170px;
+    width: 100px;
     height: 40px;
     line-height: 40px;
-}
+  }
 
 .n-item {
     position: relative;
