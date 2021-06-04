@@ -28,7 +28,7 @@
           <td>@kh.gioiTinh</td>
         </tr>
       </tbody>
-      
+
     </table>
   </div>
   <div class="my-5 col-md-5">
@@ -40,7 +40,7 @@
           <td>Room's price</td>
           <td>Booking date</td>
           <td>Checkout date</td>
-          
+
           @if (ViewBag.thanhToan == true)
           {
             <td></td>
@@ -57,7 +57,7 @@
               <td>$@string.Format("{0:#.00}", @phong.calculateTotalMoney())</td>
               <td>@phong.ngayDat.ToString("yyyy/MM/dd")</td>
               <td>@phong.ngayTra.ToString("yyyy/MM/dd")</td>
-              <td>@Html.ActionLink("Delete", "XoaDonHang", "DatHang", new { tenPhong = @phong.tenPhong, thanhToan = true }, null)</td>
+              <td>@Html.ActionLink("Delete", "XoaDonHang", "DatHang", new { tenPhong = @phong.tenPhong, thanhToan = true }, new { @class = "btn btn-danger" })</td>
             </tr>
           }
         }
@@ -70,12 +70,12 @@
               <td>$@string.Format("{0:#.00}", @hd.tienThanhToan)</td>
               <td>@hd.ngayDat.Value.ToShortDateString()</td>
               <td>@hd.ngayTra.Value.ToShortDateString()</td>
-              <td>@Html.ActionLink("Delete", "XoaDonHang", "DatHang", new { tenPhong = hd.tenPhong, thanhToan = false }, null)</td>
+              <td>@Html.ActionLink("Delete", "XoaDonHang", "DatHang", new { tenPhong = hd.tenPhong, thanhToan = false }, new { @class = "btn btn-danger" })</td>
             </tr>
           }
         }
       </tbody>
-      
+
 
     </table>
   </div>
@@ -136,3 +136,22 @@
   </div>
 
 </form>
+
+@{ Html.RenderPartial("_Scripts"); }
+
+<script>
+  const listDeleteBtn = document.querySelectorAll('a[class="btn btn-danger"]');
+  const form = document.querySelector("form");
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    const answer = confirm("Are you sure ?");
+
+    if (answer) {
+      window.location.href = e.currentTarget.href;
+      return;
+    }
+  }
+
+  listDeleteBtn.forEach(item => item.addEventListener("click", handleClick))
+</script>

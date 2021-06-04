@@ -42,16 +42,6 @@
                     {   
                         <div class="product-price">$@string.Format("{0:#.00}", @phong.giaPhong)</div>     
                     }
-
-                    <div class="product-links">
-                        <form action="/DatHang/ThemMatHang?tenPhong=@phong.tenPhong" method="post">
-                            <button class="btn-test" type="submit"><i class="fa fa-shopping-cart"></i></button>
-                        </form>
-
-                        <form action="/Customer/ThemPhongYeuThich?tenPhong=@phong.tenPhong" method="post">
-                            <button><i class="fa fa-heart"></i></button>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
