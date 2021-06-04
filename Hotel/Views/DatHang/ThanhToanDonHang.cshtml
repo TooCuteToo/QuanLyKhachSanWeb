@@ -141,7 +141,7 @@
 
 <script>
   const listDeleteBtn = document.querySelectorAll('a[class="btn btn-danger"]');
-  const form = document.querySelector("form");
+  const submitBtn = document.querySelector('button[type="submit"]');
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -154,4 +154,16 @@
   }
 
   listDeleteBtn.forEach(item => item.addEventListener("click", handleClick))
+
+  submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const form = document.querySelector("form");
+    const answer = confirm("Are you sure ?");
+
+    if (answer) {
+      form.submit();
+      return;
+    }
+  });
+
 </script>
