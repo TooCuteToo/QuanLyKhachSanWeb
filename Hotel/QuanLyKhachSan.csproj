@@ -132,11 +132,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\DBCustomer.cs" />
-    <Compile Include="Helpers\DBDichVu.cs" />
-    <Compile Include="Helpers\DBHoaDon.cs" />
-    <Compile Include="Helpers\DBLoaiPhong.cs" />
-    <Compile Include="Helpers\DBPhong.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\DataClasses1.cs">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
@@ -146,6 +141,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\DBCustomer.cs" />
+    <Compile Include="Models\DBDichVu.cs" />
+    <Compile Include="Models\DBHoaDon.cs" />
+    <Compile Include="Models\DBLoaiPhong.cs" />
+    <Compile Include="Models\DBPhong.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2267,6 +2267,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
