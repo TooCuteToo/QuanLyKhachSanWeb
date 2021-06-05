@@ -212,7 +212,6 @@
     <Content Include="Content\HinhAnh\overlay-bg.jpg" />
     <Content Include="Content\HinhAnh\room1.jpg" />
     <Content Include="Content\HinhAnh\sad.png" />
-    <Content Include="Content\img\AdminLTELogo.png" />
     <Content Include="Content\img\avatar.png" />
     <Content Include="Content\img\avatar2.png" />
     <Content Include="Content\img\avatar3.png" />
@@ -228,15 +227,6 @@
     <Content Include="Content\img\credit\visa.png" />
     <Content Include="Content\img\default-150x150.png" />
     <Content Include="Content\img\icons.png" />
-    <Content Include="Content\img\photo1.png" />
-    <Content Include="Content\img\photo2.png" />
-    <Content Include="Content\img\photo3.jpg" />
-    <Content Include="Content\img\photo4.jpg" />
-    <Content Include="Content\img\prod-1.jpg" />
-    <Content Include="Content\img\prod-2.jpg" />
-    <Content Include="Content\img\prod-3.jpg" />
-    <Content Include="Content\img\prod-4.jpg" />
-    <Content Include="Content\img\prod-5.jpg" />
     <Content Include="Content\img\user1-128x128.jpg" />
     <Content Include="Content\img\user2-160x160.jpg" />
     <Content Include="Content\img\user3-128x128.jpg" />
@@ -2273,6 +2263,7 @@
     <Content Include="Views\Home\ContactUs.cshtml" />
     <Content Include="Views\Shared\_Scripts.cshtml" />
     <Content Include="Views\Shared\_ServicesModal.cshtml" />
+    <Content Include="Views\Customer\Profile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

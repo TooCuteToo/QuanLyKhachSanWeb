@@ -56,6 +56,22 @@ namespace Hotel.Controllers
 
       return Json(new { message = "Email is already existed!!!" });
     }
+    
+
+    public ActionResult Profile()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public JsonResult UpdateCustomer(KhachHang kh)
+    {
+      KhachHang result = DBCustomer.UpdateCustomer(kh);
+      KhachHang loginNv = (KhachHang)Session["kh"];
+
+      Session["kh"] = kh;
+      return Json(new { url = "/Customer/Profile" });
+    }
 
 
     //[HttpPost]
