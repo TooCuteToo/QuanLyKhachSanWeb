@@ -62,6 +62,7 @@ namespace Hotel.Helpers
           kh.gioiTinh = updatedKH.gioiTinh;
           kh.ngaySinh = updatedKH.ngaySinh;
           kh.diaChi = updatedKH.diaChi;
+          kh.sdt = updatedKH.sdt;
           kh.pass = updatedKH.pass;
 
           db.SubmitChanges();

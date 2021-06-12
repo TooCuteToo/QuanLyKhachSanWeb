@@ -67,7 +67,11 @@ namespace Hotel.Controllers
     public JsonResult UpdateCustomer(KhachHang kh)
     {
       KhachHang result = DBCustomer.UpdateCustomer(kh);
-      KhachHang loginNv = (KhachHang)Session["kh"];
+
+      if (result.tenKH == null)
+      {
+        return Json(new { message = "fail" });
+      }
 
       Session["kh"] = kh;
       return Json(new { url = "/Customer/Profile" });

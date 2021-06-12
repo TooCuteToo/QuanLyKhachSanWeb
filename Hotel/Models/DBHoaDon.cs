@@ -34,7 +34,7 @@ namespace Hotel.Helpers
         {
           int totalDays = phong.ngayTra.Subtract(phong.ngayDat).Days;
           Random random = new Random();
-          int numberOfNhanVien = db.NhanViens.Count();
+          int numberOfNhanVien = 1;
 
           HoaDon hd = new HoaDon()
           {

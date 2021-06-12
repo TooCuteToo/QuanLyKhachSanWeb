@@ -137,6 +137,7 @@
           }
 
           const editIcon = e.target.parentElement;
+          console.log(editIcon.dataset.name);
 
           postData("/DatHang/GetServicesDetail", { tenPhong: editIcon.dataset.name }).then((result) => {
             for (let maDichVu of result.maDichVus) {

@@ -205,6 +205,27 @@
       updateDate();
     })
 
+    $("#add-services-checkbox-container").click((e) => {
+      const listInput = $(".add-checkbox");
+
+      if ($(e.target).val() == listInput.length) {
+        if ($(e.target).prop("checked")) {
+          listInput.each((index, item) => {
+            if (index !== listInput.length - 1) {
+              $(item).prop("checked", false);
+              $(item).prop("disabled", true);
+            }
+          })
+        } else {
+          listInput.each((index, item) => {
+            if (index !== listInput.length - 1) $(item).prop("disabled", false);
+          })
+        }
+      } else {
+        $(listInput[listInput.length - 1]).prop("checked", false);
+      }
+    })
+
   })
 
 

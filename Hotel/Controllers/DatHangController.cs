@@ -111,9 +111,23 @@ namespace Hotel.Controllers
     public JsonResult GetServicesDetail(string tenPhong)
     {
       Cart cart = Session["cart"] as Cart;
-      Room phong = cart.items.FirstOrDefault(item => item.tenPhong == tenPhong);
 
-      return Json(new { maDichVus = phong.maDichVus }); 
+      if (cart != null)
+      {
+        Room phong = cart.items.FirstOrDefault(item => item.tenPhong == tenPhong);
+        return Json(new { maDichVus = phong.maDichVus });
+      }
+
+      List<string> maDichVus = new List<string>();
+      HoaDon hd = DBHoaDon.getHoaDon(tenPhong);
+      List<ChiTietDichVu> dichVus = DBDichVu.getDichVusByMa(hd.maHD);
+
+      foreach (ChiTietDichVu ct in dichVus)
+      {
+        maDichVus.Add(ct.maDichVu.ToString());
+      }
+
+      return Json(new { maDichVus });
     }
 
     public ActionResult ThanhToanDonHang(bool thanhToan)
@@ -126,6 +140,7 @@ namespace Hotel.Controllers
 
         ViewBag.kh = kh;
         ViewBag.thanhToan = true;
+        ViewBag.dichVus = DBDichVu.getDichVus();
 
         return View(cart);
       }
@@ -142,6 +157,7 @@ namespace Hotel.Controllers
 
       ViewBag.hoaDons = dsHoaDon;
       ViewBag.soLuong = dsHoaDon.Count;
+      ViewBag.dichVus = DBDichVu.getDichVus();
 
       ViewBag.tongTien = dsHoaDon.Sum(item => item.tienThanhToan);
 

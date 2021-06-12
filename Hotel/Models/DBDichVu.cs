@@ -16,6 +16,14 @@ namespace Hotel.Helpers
       }
     }
 
+    public static List<ChiTietDichVu> getDichVusByMa(int maHD)
+    {
+      using (DataClasses1DataContext db = new DataClasses1DataContext())
+      {
+        return db.ChiTietDichVus.Where(item => item.maHD == maHD).ToList();
+      }
+    }
+
     public static void createServicesDetail(string tenPhong, List<string> services)
     {
       using (DataClasses1DataContext db = new DataClasses1DataContext())

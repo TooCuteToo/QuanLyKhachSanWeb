@@ -3,6 +3,7 @@
   ViewBag.Title = "ThanhToanDonHang";
   Layout = "~/Views/Shared/LayoutHotel.cshtml";
   KhachHang kh = ViewBag.kh as KhachHang;
+  List<DichVu> dichVus = (List<DichVu>)ViewBag.dichVus;
 }
 
 @model Cart
@@ -40,25 +41,30 @@
           <td>Room's price</td>
           <td>Booking date</td>
           <td>Checkout date</td>
-
-          @if (ViewBag.thanhToan == true)
-          {
-            <td></td>
-          }
+          <td>Status</td>
+          <td></td>
+          <td></td>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="order-table">
         @if (ViewBag.thanhToan == true)
         {
           foreach (Room phong in Model.items)
           {
-            <tr>
-              <td>@phong.tenPhong</td>
-              <td>$@string.Format("{0:#.00}", @phong.calculateTotalMoney())</td>
-              <td>@phong.ngayDat.ToString("yyyy/MM/dd")</td>
-              <td>@phong.ngayTra.ToString("yyyy/MM/dd")</td>
-              <td>@Html.ActionLink("Delete", "XoaDonHang", "DatHang", new { tenPhong = @phong.tenPhong, thanhToan = true }, new { @class = "btn btn-danger" })</td>
-            </tr>
+        <tr>
+          <td>@phong.tenPhong</td>
+          <td>$@string.Format("{0:#.00}", @phong.calculateTotalMoney())</td>
+          <td>@phong.ngayDat.ToString("yyyy/MM/dd")</td>
+          <td>@phong.ngayTra.ToString("yyyy/MM/dd")</td>
+          <td>unpaid</td>
+
+          <td>
+            <a class="btn btn-info btn-sm" href="#" data-toggle="modal" data-target="#modal-services" data-name="@phong.tenPhong" style="font-size: 16px; padding: 6px 12px">
+              Services
+            </a>
+          </td>
+          <td>@Html.ActionLink("Delete", "XoaDonHang", "DatHang", new { tenPhong = @phong.tenPhong, thanhToan = true }, new { @class = "btn btn-danger" })</td>
+        </tr>
           }
         }
         else
@@ -70,13 +76,25 @@
               <td>$@string.Format("{0:#.00}", @hd.tienThanhToan)</td>
               <td>@hd.ngayDat.Value.ToShortDateString()</td>
               <td>@hd.ngayTra.Value.ToShortDateString()</td>
+              @if (hd.tinhTrang == true)
+              {
+                <td>paid</td>
+              }
+              else
+              {
+                <td>unpaid</td>
+              }
+
+              <td>
+                <a class="btn btn-info btn-sm" href="#" data-toggle="modal" data-target="#modal-services" data-name="@hd.tenPhong" style="font-size: 16px; padding: 6px 12px">
+                  Services
+                </a>
+              </td>
               <td>@Html.ActionLink("Delete", "XoaDonHang", "DatHang", new { tenPhong = hd.tenPhong, thanhToan = false }, new { @class = "btn btn-danger" })</td>
             </tr>
           }
         }
       </tbody>
-
-
     </table>
   </div>
 
@@ -138,6 +156,7 @@
 </form>
 
 @{ Html.RenderPartial("_Scripts"); }
+@{ Html.RenderPartial("_ServicesModal", null, new ViewDataDictionary { { "dichVus", dichVus } }); }
 
 <script>
   const listDeleteBtn = document.querySelectorAll('a[class="btn btn-danger"]');
@@ -155,15 +174,56 @@
 
   listDeleteBtn.forEach(item => item.addEventListener("click", handleClick))
 
-  submitBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    const form = document.querySelector("form");
-    const answer = confirm("Are you sure ?");
+  if (submitBtn) {
+    submitBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const form = document.querySelector("form");
+      const answer = confirm("Are you sure ?");
 
-    if (answer) {
-      form.submit();
-      return;
+      if (answer) {
+        form.submit();
+        return;
+      }
+    });
+  }
+
+  document.querySelector(".order-table").addEventListener("click", (e) => {
+    const listCheckBox = Array.from(document.querySelectorAll(".add-checkbox"));
+
+    if (e.target.classList.contains("btn-info")) {
+      for (let checkbox of listCheckBox) {
+        checkbox.checked = false;
+        checkbox.disabled = false;
+      }
+
+      console.log(e.target.dataset.name)
+
+      postData("/DatHang/GetServicesDetail", { tenPhong: e.target.dataset.name }).then((result) => {
+        for (let maDichVu of result.maDichVus) {
+          const checkedBox = listCheckBox.find(item => item.value === maDichVu);
+          checkedBox.checked = true;
+        }
+      });
     }
-  });
+  })
+
+  async function postData(url = '', data = {}) {
+    // Default options are marked with *
+    const response = await fetch(url, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: 'follow', // manual, *follow, error
+      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify(data) // body data type must match "Content-Type" header
+    });
+
+    return response.json(); // parses JSON response into native JavaScript objects
+  }
 
 </script>

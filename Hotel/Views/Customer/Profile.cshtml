@@ -149,7 +149,7 @@
       return false;
     }
 
-    const nhanVien = {
+    const kh = {
       maKH: @kh.maKH,
       tenKH: $("#inputName").val(),
       gioiTinh: $("#inputGender").prop("checked") ? "Female" : "Male",
@@ -160,14 +160,19 @@
       pass: $("#inputPass").val()
     }
 
-    console.log(nhanVien);
+    console.log(kh);
 
     $.ajax({
       url: '/Customer/UpdateCustomer',
       type: 'POST',
       contentType: 'application/json',
-      data: JSON.stringify(nhanVien)
+      data: JSON.stringify(kh)
     }).done(function (result) {
+      if (result.message) {
+        alert("You is email is already existed!!!");
+        return;
+      }
+
       window.location.href = window.location.origin + result.url;
     })
   })
